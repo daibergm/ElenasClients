@@ -83,7 +83,7 @@ function LoginComponent(props: Props) {
                 <Button
                   title="INICIAR SESIÓN"
                   testID={TEST_IDS.submitButton}
-                  disabled={loading || !isValid || !dirty}
+                  disabled={!isValid || !dirty}
                   onPress={handleSubmit}
                   loading={loading}
                 />

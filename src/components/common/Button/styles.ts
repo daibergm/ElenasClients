@@ -4,9 +4,6 @@ import { StyleSheet } from 'react-native';
 import { Colors } from '../../../assets';
 
 export default StyleSheet.create({
-  font: {
-    marginTop: 5,
-  },
   title: {
     fontSize: 18,
   },

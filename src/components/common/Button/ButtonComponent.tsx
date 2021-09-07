@@ -17,11 +17,7 @@ function ButtonComponent({ secondary, ...otherProps }: Props) {
 
   return (
     <Button
-      titleStyle={[
-        styles.title,
-        styles.font,
-        secondary && styles.textSecondary,
-      ]}
+      titleStyle={[styles.title, secondary && styles.textSecondary]}
       buttonStyle={[styles.buttonDefault, buttonStyle]}
       disabledStyle={styles.buttonDisabled}
       {...otherProps}
