@@ -1,48 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Clients test suits Render correctly 1`] = `
-<RCTScrollView
-  ListEmptyComponent={null}
-  contentContainerStyle={false}
-  data={
-    Array [
+Array [
+  <View
+    style={
       Object {
-        "cellphone": "123",
-        "firstName": "John",
-        "id": 1,
-        "lastName": "Doe",
-      },
-    ]
-  }
-  getItem={[Function]}
-  getItemCount={[Function]}
-  keyExtractor={[Function]}
-  onContentSizeChange={[Function]}
-  onLayout={[Function]}
-  onMomentumScrollBegin={[Function]}
-  onMomentumScrollEnd={[Function]}
-  onScroll={[Function]}
-  onScrollBeginDrag={[Function]}
-  onScrollEndDrag={[Function]}
-  removeClippedSubviews={false}
-  renderItem={[Function]}
-  scrollEventThrottle={50}
-  showsVerticalScrollIndicator={false}
-  stickyHeaderIndices={Array []}
-  style={
-    Object {
-      "paddingHorizontal": 15,
-      "paddingVertical": 25,
+        "marginTop": 25,
+        "paddingHorizontal": 15,
+      }
     }
-  }
-  viewabilityConfigCallbackPairs={Array []}
->
-  <View>
+  >
     <View
-      onLayout={[Function]}
-      style={null}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 3,
+          },
+          undefined,
+          false,
+        ]
+      }
     >
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": false,
+          }
+        }
         accessible={true}
         collapsable={false}
         focusable={true}
@@ -56,31 +46,122 @@ exports[`Clients test suits Render correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "elevation": 1,
-            "marginBottom": 10,
             "opacity": 1,
-            "paddingHorizontal": 15,
-            "paddingVertical": 20,
-            "shadowColor": "#000000",
-            "shadowOffset": Object {
-              "height": 1,
-              "width": 0,
-            },
-            "shadowOpacity": 0.05,
-            "shadowRadius": 1,
           }
         }
       >
-        <Text>
-          John Doe
-        </Text>
-        <Text>
-          Celular: 123
-        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00adee",
+              "borderColor": "#2089dc",
+              "borderRadius": 20,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "center",
+              "padding": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            CREAR CLIENTE
+          </Text>
+        </View>
       </View>
     </View>
-  </View>
-</RCTScrollView>
+  </View>,
+  <RCTScrollView
+    ListEmptyComponent={null}
+    contentContainerStyle={false}
+    data={
+      Array [
+        Object {
+          "cellphone": "123",
+          "firstName": "John",
+          "id": 1,
+          "lastName": "Doe",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "paddingHorizontal": 15,
+        "paddingVertical": 25,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "elevation": 1,
+              "marginBottom": 10,
+              "opacity": 1,
+              "paddingHorizontal": 15,
+              "paddingVertical": 20,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 0,
+              },
+              "shadowOpacity": 0.05,
+              "shadowRadius": 1,
+            }
+          }
+        >
+          <Text>
+            John Doe
+          </Text>
+          <Text>
+            Celular: 123
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>,
+]
 `;

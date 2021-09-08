@@ -4,6 +4,10 @@ import { StyleSheet } from 'react-native';
 import { Colors } from '../../assets';
 
 export default StyleSheet.create({
+  buttonContainer: {
+    paddingHorizontal: 15,
+    marginTop: 25,
+  },
   container: {
     paddingHorizontal: 15,
     paddingVertical: 25,
