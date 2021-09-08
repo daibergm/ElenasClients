@@ -29,7 +29,11 @@ function AppScreen() {
         <>
           {!isAuthenticated && (
             <Stack.Navigator initialRouteName={LOGIN_ROUTE}>
-              <Stack.Screen name={LOGIN_ROUTE} component={LoginScreen} />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name={LOGIN_ROUTE}
+                component={LoginScreen}
+              />
             </Stack.Navigator>
           )}
           {isAuthenticated && (

@@ -9,7 +9,7 @@ const InputComponent = ({ errorMessage, ...otherProps }: InputProps) => {
   return (
     <Input
       errorStyle={styles.inputError}
-      placeholderTextColor={Colors.secondary}
+      placeholderTextColor={errorMessage ? Colors.danger : Colors.secondary}
       inputStyle={styles.input}
       inputContainerStyle={[
         styles.container,
