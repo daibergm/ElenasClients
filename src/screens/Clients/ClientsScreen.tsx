@@ -1,26 +1,44 @@
-import React, { useContext, useEffect } from 'react';
-import { SafeAreaView, Text } from 'react-native';
-
-// @Context
-import { AccountContext } from '../../context/';
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+import { useQuery, gql } from '@apollo/client';
 
 // @Styles
 import styles from './styles';
 
-function ClientsScreen() {
-  // TODO: Remove when implement drawer navigator
-  const { onLogout } = useContext(AccountContext);
+// @Components
+import { Loading, ClientsComponent } from '../../components/';
 
-  // TODO: Remove when implement drawer navigator
-  useEffect(() => {
-    setTimeout(() => {
-      onLogout && onLogout();
-    }, 2000);
-  }, [onLogout]);
+// @Queries
+const CLIENT_QUERY = gql`
+  query clients($page: Int, $perPage: Int) {
+    clientsSearch(page: $page, perPage: $perPage) {
+      ... on ClientPagination {
+        currentPage
+        totalPages
+        resultsPerPage
+        results {
+          id
+          firstName
+          lastName
+          cellphone
+        }
+      }
+    }
+  }
+`;
+
+function ClientsScreen() {
+  const { data, loading } = useQuery(CLIENT_QUERY, {
+    variables: {
+      page: 0,
+      perPage: 100,
+    },
+  });
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Lista de clientes</Text>
+      <ClientsComponent data={data?.clientsSearch.results} />
+      {loading && <Loading />}
     </SafeAreaView>
   );
 }
