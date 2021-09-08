@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { Colors } from '../../assets/';
+
 export default StyleSheet.create({
   container: {
     flex: 1,
@@ -16,5 +18,10 @@ export default StyleSheet.create({
   buttonContainer: {
     marginTop: 30,
     paddingBottom: 15,
+  },
+  errorLabel: {
+    color: Colors.danger,
+    fontSize: 17,
+    textAlign: 'center',
   },
 });

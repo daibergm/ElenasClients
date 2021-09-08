@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { Text } from 'react-native-elements';
 
 // @Assets
 import styles from './styles';
@@ -29,11 +30,10 @@ const validationSchema = yup.object().shape({
 interface Props {
   submitFunction: (values: Login) => void;
   loading: boolean;
+  apiError?: string;
 }
 
-function LoginComponent(props: Props) {
-  const { submitFunction, loading } = props;
-
+function LoginComponent({ submitFunction, loading, apiError }: Props) {
   const onSubmit = (values: Login) => submitFunction(values);
 
   return (
@@ -88,6 +88,11 @@ function LoginComponent(props: Props) {
                   loading={loading}
                 />
               </View>
+              {apiError && (
+                <View>
+                  <Text style={styles.errorLabel}>{apiError}</Text>
+                </View>
+              )}
             </View>
           </ScrollView>
         )}

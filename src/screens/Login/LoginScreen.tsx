@@ -14,13 +14,17 @@ import { LoginComponent } from '../../components/';
 import styles from './styles';
 
 function LoginScreen() {
-  const { onLogin, isLoading } = useContext(AccountContext);
+  const { onLogin, isLoading, error } = useContext(AccountContext);
 
   const onSubmit = async (data: Login) => onLogin && onLogin(data);
 
   return (
     <SafeAreaView style={styles.container}>
-      <LoginComponent submitFunction={onSubmit} loading={!!isLoading} />
+      <LoginComponent
+        submitFunction={onSubmit}
+        loading={!!isLoading}
+        apiError={error}
+      />
     </SafeAreaView>
   );
 }
