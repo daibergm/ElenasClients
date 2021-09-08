@@ -14,7 +14,7 @@ import { Login } from '../../types/';
 import { Button, Input } from '../common';
 
 // @Constants
-import { TEST_IDS } from '../../constants/';
+import { TEST_IDS, ERRORS } from '../../constants/';
 
 // @Vars
 const initialValues = {
@@ -90,7 +90,7 @@ function LoginComponent({ submitFunction, loading, apiError }: Props) {
               </View>
               {apiError && (
                 <View>
-                  <Text style={styles.errorLabel}>{apiError}</Text>
+                  <Text style={styles.errorLabel}>{ERRORS[apiError]}</Text>
                 </View>
               )}
             </View>
