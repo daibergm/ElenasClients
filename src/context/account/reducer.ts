@@ -16,7 +16,7 @@ const accountReducer = (state: State = initialState, action: Action) => {
     case ActionTypes.LOGIN_SUCCESS: {
       const newState: State = {
         ...state,
-        user: action.payload,
+        token: action.payload,
         isLoading: false,
         isAuthenticated: true,
       };
@@ -24,7 +24,15 @@ const accountReducer = (state: State = initialState, action: Action) => {
       return newState;
     }
 
-    case ActionTypes.LOGIN_FAILURE:
+    case ActionTypes.LOGIN_FAILURE: {
+      const newState: State = {
+        ...initialState,
+        error: action.payload,
+      };
+
+      return newState;
+    }
+
     case ActionTypes.LOGOUT: {
       return initialState;
     }

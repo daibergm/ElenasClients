@@ -1,6 +1,3 @@
-// @Types
-import { User } from '../../types/user';
-
 export enum ActionTypes {
   LOGIN_ATTEMPT = '@ACCOUNT_LOGIN_ATTEMPT',
   LOGIN_SUCCESS = '@ACCOUNT_LOGIN_SUCCESS',
@@ -14,5 +11,5 @@ export type Action = {
     | ActionTypes.LOGIN_SUCCESS
     | ActionTypes.LOGIN_FAILURE
     | ActionTypes.LOGOUT;
-  payload?: User;
+  payload?: string;
 };

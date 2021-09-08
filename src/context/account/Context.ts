@@ -1,12 +1,13 @@
 import { createContext, Context } from 'react';
 
 // @Types
-import { User, Login } from '../../types/user';
+import { Login } from '../../types/user';
 
 export type State = {
-  user?: User;
+  token?: string;
   isAuthenticated?: boolean;
   isLoading?: boolean;
+  error?: string;
   onLogin?: (data: Login) => void;
   onLogout?: () => void;
 };

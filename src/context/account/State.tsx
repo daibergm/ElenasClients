@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
-import { isEmpty } from 'lodash';
 import AsyncStorage from '@react-native-community/async-storage';
+import { useMutation, gql } from '@apollo/client';
 
 // @Context
 import AccountContext, { initialState } from './Context';
@@ -13,12 +13,16 @@ import { Login } from '../../types/user';
 // @constants
 import { STORAGE_SESSION_KEY } from '../../constants/';
 
-const TEMP_LOGIN_DATA = {
-  firstName: 'John',
-  lastName: 'Doe',
-  DNI: '1234567890',
-  email: 'johndoe@gmail.com',
-};
+// @Mutations
+const LOGIN_MUTATION = gql`
+  mutation login($cellphone: String!, $password: String!) {
+    login(cellphone: $cellphone, password: $password) {
+      ... on AuthInfo {
+        token
+      }
+    }
+  }
+`;
 
 type Props = {
   children: JSX.Element;
@@ -26,6 +30,7 @@ type Props = {
 
 const AccountState = ({ children }: Props) => {
   const [state, dispatch] = useReducer(accountReducer, initialState);
+  const [login] = useMutation(LOGIN_MUTATION);
 
   useEffect(() => {
     const validateSession = async () => {
@@ -35,7 +40,7 @@ const AccountState = ({ children }: Props) => {
       if (session) {
         dispatch({
           type: ActionTypes.LOGIN_SUCCESS,
-          payload: JSON.parse(session),
+          payload: session,
         });
       } else {
         dispatch({ type: ActionTypes.LOGOUT });
@@ -51,23 +56,32 @@ const AccountState = ({ children }: Props) => {
   const onLogin = async (data: Login): Promise<void> => {
     if (!state.isLoading) {
       dispatch({ type: ActionTypes.LOGIN_ATTEMPT });
-      const rs = await Promise.resolve({
-        ...TEMP_LOGIN_DATA,
-        cellphone: data.cellphone,
-      });
 
-      if (!isEmpty(rs)) {
-        await AsyncStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(rs));
+      try {
+        const {
+          data: {
+            login: { token, __typename },
+          },
+        } = await login({ variables: data });
 
+        if (token) {
+          await AsyncStorage.setItem(STORAGE_SESSION_KEY, token);
+
+          dispatch({
+            type: ActionTypes.LOGIN_SUCCESS,
+            payload: token,
+          });
+
+          return;
+        }
+
+        dispatch({ type: ActionTypes.LOGIN_FAILURE, payload: __typename });
+      } catch (error) {
         dispatch({
-          type: ActionTypes.LOGIN_SUCCESS,
-          payload: rs,
+          type: ActionTypes.LOGIN_FAILURE,
+          payload: 'Error al intentar iniciar sesión',
         });
-
-        return;
       }
-
-      dispatch({ type: ActionTypes.LOGIN_FAILURE });
     }
   };
 
@@ -77,6 +91,7 @@ const AccountState = ({ children }: Props) => {
   const onLogout = async (): Promise<void> => {
     await Promise.resolve();
     dispatch({ type: ActionTypes.LOGOUT });
+    await AsyncStorage.removeItem(STORAGE_SESSION_KEY);
   };
 
   return (
