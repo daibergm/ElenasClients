@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client test suits Render correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    contentContainerStyle={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "paddingHorizontal": 15,
+        "paddingVertical": 25,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+          }
+        }
+        testID="emptyList"
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 15,
+              "fontWeight": "600",
+              "marginTop": 20,
+            }
+          }
+        >
+          Buscar Clientes
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "grey",
+              "fontSize": 15,
+              "marginTop": 12,
+            }
+          }
+        >
+          Lo sentimos, no pudimos encontrar ningún cliente.
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <ActivityIndicator
+      color="#00adee"
+      size="large"
+    />
+  </View>
+</RCTSafeAreaView>
+`;

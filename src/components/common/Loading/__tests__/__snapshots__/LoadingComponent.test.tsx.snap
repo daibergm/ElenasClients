@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading test suits Render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "height": "100%",
+      "justifyContent": "center",
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <ActivityIndicator
+    color="#00adee"
+    size="large"
+  />
+</View>
+`;

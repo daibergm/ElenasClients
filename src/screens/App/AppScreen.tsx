@@ -38,7 +38,11 @@ function AppScreen() {
           )}
           {isAuthenticated && (
             <Stack.Navigator initialRouteName={CLIENTS_ROUTE}>
-              <Stack.Screen name={CLIENTS_ROUTE} component={ClientsScreen} />
+              <Stack.Screen
+                options={{ title: 'CLIENTES' }}
+                name={CLIENTS_ROUTE}
+                component={ClientsScreen}
+              />
               <Stack.Screen name={CLIENT_ROUTE} component={ClientScreen} />
             </Stack.Navigator>
           )}

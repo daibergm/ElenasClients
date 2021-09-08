@@ -79,7 +79,7 @@ const AccountState = ({ children }: Props) => {
       } catch (error) {
         dispatch({
           type: ActionTypes.LOGIN_FAILURE,
-          payload: 'Error al intentar iniciar sesión',
+          payload: 'LoginFailure',
         });
       }
     }

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clients test suits Render correctly 1`] = `
+<RCTScrollView
+  ListEmptyComponent={null}
+  contentContainerStyle={false}
+  data={
+    Array [
+      Object {
+        "cellphone": "123",
+        "firstName": "John",
+        "id": 1,
+        "lastName": "Doe",
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showsVerticalScrollIndicator={false}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "paddingHorizontal": 15,
+      "paddingVertical": 25,
+    }
+  }
+  viewabilityConfigCallbackPairs={Array []}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 5,
+            "elevation": 1,
+            "marginBottom": 10,
+            "opacity": 1,
+            "paddingHorizontal": 15,
+            "paddingVertical": 20,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.05,
+            "shadowRadius": 1,
+          }
+        }
+      >
+        <Text>
+          John Doe
+        </Text>
+        <Text>
+          Celular: 123
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
