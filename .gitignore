@@ -63,3 +63,4 @@ buck-out/
 
 # tests
 /coverage
+/.jest
