@@ -5,14 +5,18 @@ import { Input, InputProps } from 'react-native-elements';
 import { Colors } from '../../../assets/';
 import styles from './styles';
 
-const InputComponent = (props: InputProps) => {
+const InputComponent = ({ errorMessage, ...otherProps }: InputProps) => {
   return (
     <Input
       errorStyle={styles.inputError}
       placeholderTextColor={Colors.secondary}
       inputStyle={styles.input}
-      inputContainerStyle={styles.container}
-      {...props}
+      inputContainerStyle={[
+        styles.container,
+        errorMessage ? styles.borderError : styles.borderSecondary,
+      ]}
+      errorMessage={errorMessage}
+      {...otherProps}
     />
   );
 };
