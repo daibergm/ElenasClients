@@ -8,11 +8,12 @@ import styles from './styles';
 
 interface Props {
   item: Client;
+  onPress: () => void;
 }
 
-function ListItemComponent({ item }: Props) {
+function ListItemComponent({ item, onPress }: Props) {
   return (
-    <TouchableOpacity style={styles.itemContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.itemContainer}>
       <Text>{`${item.firstName} ${item.lastName}`}</Text>
       <Text>{`Celular: ${item.cellphone}`}</Text>
     </TouchableOpacity>
