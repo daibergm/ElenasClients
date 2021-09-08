@@ -6,4 +6,12 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 1,
   },
+  overrides: [
+    {
+      files: ['*.tsx'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
 };
