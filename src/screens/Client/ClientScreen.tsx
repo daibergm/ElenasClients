@@ -47,6 +47,7 @@ function ClientScreen({ route }: Props) {
 
   const onSubmit = async (client: Client) => {
     setMutationLoading(true);
+    setApiError('');
     const { address, ...clientProps } = client;
     const input = {
       ...clientProps,
@@ -90,7 +91,6 @@ function ClientScreen({ route }: Props) {
 
       finishSubmit(__typename, id);
     } catch (error) {
-      console.log('Error', error);
       setApiError('LoginFailure');
       setMutationLoading(false);
     }
