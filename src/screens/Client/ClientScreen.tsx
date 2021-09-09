@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import { useQuery, useMutation, gql } from '@apollo/client';
+import { useNavigation } from '@react-navigation/native';
 
 // @Styles
 import styles from './styles';
@@ -14,8 +15,7 @@ import { ClientComponent, Loading } from '../../components';
 // @Constants
 import { CLIENTS_ROUTE } from '../../constants';
 
-type Props = {
-  navigation: ClientNavigationProps;
+export type Props = {
   route: ClientRouteProps;
 };
 
@@ -59,7 +59,7 @@ const initialValues: Client = {
   address: '',
 };
 
-function ClientScreen({ route, navigation }: Props) {
+function ClientScreen({ route }: Props) {
   const { clientId } = route.params;
   const { data, loading } = useQuery(CLIENT_QUERY, {
     variables: {
@@ -69,6 +69,7 @@ function ClientScreen({ route, navigation }: Props) {
   const [create] = useMutation(CREATE_MUTATION);
   const [apiError, setApiError] = useState('');
   const [mutationLoading, setMutationLoading] = useState(false);
+  const navigation = useNavigation<ClientNavigationProps>();
 
   const onSubmit = async (client: Client) => {
     setMutationLoading(true);

@@ -37,4 +37,9 @@ describe('Login test suits', () => {
       busy: true,
     });
   });
+  it('Error label', () => {
+    const { getByTestId } = render(<Login {...props} apiError="Test error" />);
+    const errorLabel = getByTestId(TEST_IDS.errorLabel);
+    expect(errorLabel).toBeTruthy();
+  });
 });

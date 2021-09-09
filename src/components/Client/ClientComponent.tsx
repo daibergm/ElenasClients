@@ -128,14 +128,14 @@ function ClientComponent({
               <View style={styles.buttonContainer}>
                 <Button
                   title={id ? 'EDITAR' : 'CREAR'}
-                  testID={TEST_IDS.submitButton}
+                  testID={id ? TEST_IDS.editButton : TEST_IDS.submitButton}
                   disabled={(!isValid || !dirty) && !id}
                   onPress={handleSubmit}
                   loading={loading || mutationLoading}
                 />
               </View>
               {!isEmpty(apiError) && (
-                <View>
+                <View testID={TEST_IDS.errorLabel}>
                   <Text style={styles.errorLabel}>
                     {ERRORS[apiError as string]}
                   </Text>
