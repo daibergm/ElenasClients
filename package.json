@@ -5,9 +5,12 @@
   "scripts": {
     "android": "react-native run-android",
     "android:clean": "cd android/ && ./gradlew clean",
+    "android:release": "cd android && ./gradlew assembleRelease && cd ..",
     "check-ts": "tsc",
     "ios": "react-native run-ios",
+    "ios:clean": "cd ios && pod cache clean --all;rm -rf ~/Library/Caches/CocoaPods; rm -rf Pods; rm -rf ~/Library/Developer/Xcode/DerivedData/*; pod deintegrate; pod setup; pod install;",
     "start": "react-native start",
+    "start:clean": "npx react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
