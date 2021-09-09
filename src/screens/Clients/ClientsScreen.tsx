@@ -36,6 +36,7 @@ function ClientsScreen() {
       page: 0,
       perPage: 100,
     },
+    fetchPolicy: 'no-cache',
   });
   const { onLogout } = useContext(AccountContext);
 

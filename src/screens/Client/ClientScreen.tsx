@@ -38,6 +38,7 @@ function ClientScreen({ route }: Props) {
     variables: {
       ids: [clientId],
     },
+    fetchPolicy: 'no-cache',
   });
   const [create] = useMutation(CREATE_MUTATION);
   const [update] = useMutation(UPDATE_MUTATION);
