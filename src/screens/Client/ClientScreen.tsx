@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
-import { useQuery, useMutation, gql } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { useNavigation } from '@react-navigation/native';
 
 // @Styles
@@ -15,39 +15,12 @@ import { ClientComponent, Loading } from '../../components';
 // @Constants
 import { CLIENTS_ROUTE } from '../../constants';
 
+// @Apollo
+import { CLIENT_QUERY, CREATE_MUTATION, UPDATE_MUTATION } from './apollo';
+
 export type Props = {
   route: ClientRouteProps;
 };
-
-// @Queries
-const CLIENT_QUERY = gql`
-  query client($ids: [Int!]) {
-    clientsSearch(ids: $ids) {
-      ... on ClientPagination {
-        results {
-          id
-          firstName
-          lastName
-          cedula
-          email
-          cellphone
-          address
-        }
-      }
-    }
-  }
-`;
-
-// @Mutations
-const CREATE_MUTATION = gql`
-  mutation createClient($input: ClientInput!) {
-    createClient(input: $input) {
-      ... on Client {
-        id
-      }
-    }
-  }
-`;
 
 // @Vars
 const initialValues: Client = {
@@ -67,6 +40,7 @@ function ClientScreen({ route }: Props) {
     },
   });
   const [create] = useMutation(CREATE_MUTATION);
+  const [update] = useMutation(UPDATE_MUTATION);
   const [apiError, setApiError] = useState('');
   const [mutationLoading, setMutationLoading] = useState(false);
   const navigation = useNavigation<ClientNavigationProps>();
@@ -80,37 +54,59 @@ function ClientScreen({ route }: Props) {
         streetAddress: address,
       },
     };
+    const submitType = clientId ? 'updateClient' : 'createClient';
 
     try {
       let rs;
 
-      if (clientId) return;
+      if (clientId) {
+        rs = await update({
+          variables: {
+            id: clientId,
+            input: {
+              firstName: client.firstName,
+              lastName: client.lastName,
+              cedula: client.cedula || '',
+              email: client.email || '',
+              cellphone: client.cellphone,
+              address: { streetAddress: client.address },
+            },
+          },
+        });
+      } else {
+        rs = await create({
+          variables: {
+            input,
+          },
+        });
+      }
+      console.log('Result', rs);
 
-      rs = await create({
-        variables: {
-          input,
-        },
-      });
       const {
         data: {
-          createClient: { id, __typename },
+          [submitType]: { id, __typename },
         },
       } = rs;
 
-      if (id) {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: CLIENTS_ROUTE }],
-        });
-        return;
-      }
-
-      setApiError(`Client${__typename}`);
-      setMutationLoading(false);
+      finishSubmit(__typename, id);
     } catch (error) {
+      console.log('Error', error);
       setApiError('LoginFailure');
       setMutationLoading(false);
     }
+  };
+
+  const finishSubmit = (requestError: string, id?: number) => {
+    if (id) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: CLIENTS_ROUTE }],
+      });
+      return;
+    }
+
+    setApiError(`Client${requestError}`);
+    setMutationLoading(false);
   };
 
   return (
