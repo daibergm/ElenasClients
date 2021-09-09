@@ -8,6 +8,7 @@ const accountReducer = (state: State = initialState, action: Action) => {
       const newState: State = {
         ...state,
         isLoading: true,
+        error: '',
       };
 
       return newState;

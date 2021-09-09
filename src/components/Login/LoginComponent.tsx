@@ -3,6 +3,7 @@ import { View, ScrollView } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Text } from 'react-native-elements';
+import { isEmpty } from 'lodash';
 
 // @Assets
 import styles from './styles';
@@ -88,9 +89,11 @@ function LoginComponent({ submitFunction, loading, apiError }: Props) {
                   loading={loading}
                 />
               </View>
-              {apiError && (
+              {!isEmpty(apiError) && (
                 <View testID={TEST_IDS.errorLabel}>
-                  <Text style={styles.errorLabel}>{ERRORS[apiError]}</Text>
+                  <Text style={styles.errorLabel}>
+                    {ERRORS[apiError as string]}
+                  </Text>
                 </View>
               )}
             </View>

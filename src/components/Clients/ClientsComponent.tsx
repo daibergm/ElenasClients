@@ -17,9 +17,10 @@ import { CLIENT_ROUTE } from '../../constants/';
 
 interface Props {
   data: Client[];
+  onLogout?: () => void;
 }
 
-function ClientsComponent({ data }: Props) {
+function ClientsComponent({ data, onLogout }: Props) {
   const navigation = useNavigation<ClientNavigationProps>();
 
   const onNavigate = (clientId?: number) =>
@@ -39,10 +40,15 @@ function ClientsComponent({ data }: Props) {
     );
   };
 
+  const onHandlerLogout = () => onLogout && onLogout();
+
   return (
     <>
       <View style={styles.buttonContainer}>
         <Button title="CREAR CLIENTE" onPress={() => onNavigate()} />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button secondary title="SALIR" onPress={onHandlerLogout} />
       </View>
       <FlatList
         style={styles.container}
