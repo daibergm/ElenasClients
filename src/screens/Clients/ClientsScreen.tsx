@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SafeAreaView } from 'react-native';
 import { useQuery, gql } from '@apollo/client';
 
@@ -7,6 +7,9 @@ import styles from './styles';
 
 // @Components
 import { Loading, ClientsComponent } from '../../components/';
+
+// @Context
+import { AccountContext } from '../../context';
 
 // @Queries
 const CLIENT_QUERY = gql`
@@ -34,10 +37,14 @@ function ClientsScreen() {
       perPage: 100,
     },
   });
+  const { onLogout } = useContext(AccountContext);
 
   return (
     <SafeAreaView style={styles.container}>
-      <ClientsComponent data={data?.clientsSearch.results} />
+      <ClientsComponent
+        data={data?.clientsSearch.results}
+        onLogout={onLogout}
+      />
       {loading && <Loading />}
     </SafeAreaView>
   );

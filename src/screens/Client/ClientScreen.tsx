@@ -81,7 +81,6 @@ function ClientScreen({ route }: Props) {
           },
         });
       }
-      console.log('Result', rs);
 
       const {
         data: {
