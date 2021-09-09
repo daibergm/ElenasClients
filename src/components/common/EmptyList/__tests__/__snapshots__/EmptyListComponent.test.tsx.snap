@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyList test suits Render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+    }
+  }
+  testID="emptyList"
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "600",
+        "marginTop": 20,
+      }
+    }
+  >
+    Buscar Clientes
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "grey",
+        "fontSize": 15,
+        "marginTop": 12,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
