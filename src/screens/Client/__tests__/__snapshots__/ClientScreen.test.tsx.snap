@@ -1,0 +1,461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client test suits Render correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <RCTScrollView
+      alwaysBounceVertical={false}
+      keyboardShouldPersistTaps="handled"
+      showsVerticalScrollIndicator={false}
+      style={
+        Object {
+          "paddingHorizontal": 15,
+          "width": "100%",
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Nombre"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="firstNameInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Apellido"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="lastNameInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Cédula"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="cedulaInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Correo electrónico"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="emailInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Celular"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="cellphoneInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(0, 173, 238, 0.65)",
+                  "borderBottomWidth": 1,
+                  "borderColor": "#86939e",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <TextInput
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Dirección"
+                placeholderTextColor="rgba(0, 173, 238, 0.65)"
+                style={
+                  Object {
+                    "color": "#00adee",
+                    "flex": 1,
+                    "fontSize": 16,
+                    "minHeight": 40,
+                  }
+                }
+                testID="addressInput"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#dc3545",
+                  "fontSize": 12,
+                  "margin": 5,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 30,
+                "paddingBottom": 15,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 3,
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "borderRadius": 3,
+                  },
+                  undefined,
+                  false,
+                ]
+              }
+            >
+              <View
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "busy": true,
+                    "disabled": true,
+                  }
+                }
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID="submitButton"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "hsl(208, 8%, 90%)",
+                      "borderColor": "#2089dc",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "opacity": 0.65,
+                      "padding": 8,
+                    }
+                  }
+                >
+                  <ActivityIndicator
+                    color="white"
+                    size="small"
+                    style={
+                      Object {
+                        "marginVertical": 2,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <ActivityIndicator
+      color="#00adee"
+      size="large"
+    />
+  </View>
+</RCTSafeAreaView>
+`;

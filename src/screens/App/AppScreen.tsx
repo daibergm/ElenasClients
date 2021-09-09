@@ -43,7 +43,11 @@ function AppScreen() {
                 name={CLIENTS_ROUTE}
                 component={ClientsScreen}
               />
-              <Stack.Screen name={CLIENT_ROUTE} component={ClientScreen} />
+              <Stack.Screen
+                options={{ title: 'CLIENTE' }}
+                name={CLIENT_ROUTE}
+                component={ClientScreen}
+              />
             </Stack.Navigator>
           )}
         </>

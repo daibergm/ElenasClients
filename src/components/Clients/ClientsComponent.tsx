@@ -1,15 +1,15 @@
 import React from 'react';
-import { FlatList, ListRenderItem } from 'react-native';
+import { FlatList, ListRenderItem, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 // @Styles
 import styles from './styles';
 
 // @Types
-import { Client } from '../../types';
+import { Client, ClientNavigationProps } from '../../types';
 
 // @Components
-import { EmptyList } from '../common';
+import { EmptyList, Button } from '../common';
 import ListItemComponent from './ListItemComponent';
 
 // @Constants
@@ -20,14 +20,17 @@ interface Props {
 }
 
 function ClientsComponent({ data }: Props) {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ClientNavigationProps>();
 
-  const onNavigate = () => navigation.navigate(CLIENT_ROUTE as never);
+  const onNavigate = (clientId?: number) =>
+    navigation.navigate(CLIENT_ROUTE, {
+      clientId: clientId,
+    });
 
   const getKeyExtractor = (item: Client) => `${item.id}`;
 
   const renderItem: ListRenderItem<Client> = ({ item }) => (
-    <ListItemComponent item={item} onPress={onNavigate} />
+    <ListItemComponent item={item} onPress={() => onNavigate(item.id)} />
   );
 
   const renderEmptyComponent = () => {
@@ -37,15 +40,20 @@ function ClientsComponent({ data }: Props) {
   };
 
   return (
-    <FlatList
-      style={styles.container}
-      showsVerticalScrollIndicator={false}
-      data={data}
-      keyExtractor={getKeyExtractor}
-      renderItem={renderItem}
-      ListEmptyComponent={!data?.length ? renderEmptyComponent : null}
-      contentContainerStyle={!data?.length && styles.emptyContainer}
-    />
+    <>
+      <View style={styles.buttonContainer}>
+        <Button title="CREAR CLIENTE" onPress={() => onNavigate()} />
+      </View>
+      <FlatList
+        style={styles.container}
+        showsVerticalScrollIndicator={false}
+        data={data}
+        keyExtractor={getKeyExtractor}
+        renderItem={renderItem}
+        ListEmptyComponent={!data?.length ? renderEmptyComponent : null}
+        contentContainerStyle={!data?.length && styles.emptyContainer}
+      />
+    </>
   );
 }
 

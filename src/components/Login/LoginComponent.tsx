@@ -89,7 +89,7 @@ function LoginComponent({ submitFunction, loading, apiError }: Props) {
                 />
               </View>
               {apiError && (
-                <View>
+                <View testID={TEST_IDS.errorLabel}>
                   <Text style={styles.errorLabel}>{ERRORS[apiError]}</Text>
                 </View>
               )}
